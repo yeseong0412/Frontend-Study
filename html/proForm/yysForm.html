@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>today's topic is form 난다.</title>
+        <style>
+            .cls1 {background-color: yellowgreen; display: inline-block; width: 12%; text-align: center; color: red;}
+            input {background-color: yellow ;}
+            h1 {color: green; text-align: center;}
+            h5 {color : blue; text-align: center;}
+            div{margin-top: 1opx; margin-left: 50px;}
+            .color1 {color: red;}
+
+        </style>
+        <script>
+            function mChk(){
+                var lFm = document.fm;
+                var lGrd = lFm.grd;
+                var lNum = lFm.num;
+                var lCls = lFm.cls;
+                var lAccss = document.getElementById("idAccss");
+                if(lGrd.value=='0') {
+                    window.alert('what is your grade?')
+                    lGrd.focus();
+                    return false;
+                }
+                else if(lCls.value==''){
+                    window.alert('please input your class name!')
+                    document.getElementById("rd1").select();
+                    return false;
+                }
+                else if(lNum.value=='' || isNaN(lNum.value)) {
+                    window.alert('please input your number!!')
+                    lNum.focus();
+                    return false;
+                }
+                //인증키 체크 4자리 아니면....  value.length//
+                else if(lAccss.value.length !=4) {
+                    window.alert('please input your number!!')
+                    lAccss.focus();
+                    return false;
+                }
+                else 
+                    lFm.submit();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
+            At last, we will send 
+            data to server
+        </h1>
+        <h5>
+            input your information
+        </h5>
+        <form name="fm" method="post" action="http://arabbit.link/dirSw/insrtHstry.php" onsubmit="return false;">
+        <div>
+            <label class="cls1"> 학년 : </label>
+            <select name="grd">
+                <option value="0" selected> 학년은? </option>
+                <option value="1"> 1학년 </option>
+                <option value="2"> 2학년 </option>
+                <option value="3"> 3학년 </option>
+            </select>
+            <!--
+            <input id="gd1" type="radio" name="grd" value="1"> 
+            <label for="gd1"> 1학년 </label>
+            <input id="gd2" type="radio" name="grd" value="2"> 
+            <label for="gd2"> 2학년 </label>
+            <input id="gd3" type="radio" name="grd" value="3"> 
+            <label for="gd3"> 3학년 </label>
+            -->
+        </div>
+            <div>
+                <label class="cls1"> 반 : </label>
+                <input class="color1" id="rd1" type="radio" name="cls" value="1"> <label for="rd1"> 1반 </label>
+                <input class="color1" id="rd2" type="radio" name="cls" value="2"> <label for="rd2"> 2반 </label>
+                <input class="color1" id="rd3" type="radio" name="cls" value="3"> <label for="rd3"> 3반 </label>
+                <input class="color1" id="rd4" type="radio" name="cls" value="4"> <label for="rd4"> 4반 </label>
+                
+            </div>
+            <div>
+                <label class="cls1"> 번호 : </label>
+                <input type="text" name="num" placeholder="숫자만?">                    
+            </div>
+            <div>
+                <label class="cls1"> 구분자1 : </label>
+                <input type="text" name="gbn1" placeholder="숫자만?">                    
+            </div>
+            <div>
+                <label class="cls1"> 구분자2 : </label>
+                <input type="text" name="gbn2" placeholder="숫자만?">                    
+            </div>
+            <div>
+                <label class="cls1"> 인증키 : </label>
+                <input id="idAccss" type="password" name="accessKey" placeholder="숫자만?">                    
+            </div>
+            <input type="submit" value="제출" onclick="mChk();">
+        </form>
+    </body>
+</html>

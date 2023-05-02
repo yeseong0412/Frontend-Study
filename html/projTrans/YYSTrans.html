@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80vw;
+            height: 20vh;
+            background-color: hsla(120, 73%, 75%,0.5);
+            border-radius: 0px 0px 10px 0px;
+            border: 2px double;
+            border-color: hsla(240, 100%, 50%,0.5);
+            transition: 4s;
+        }
+        Div:hover{
+            width: 5vw;
+            background-color: hsla(300, 100%, 50%, 1);
+        }
+        #idEase{
+            transition-timing-function: ease; background-color: orange;
+        }
+        #idLinear{
+            transition-timing-function: linear; background-color: yellow;
+        }
+        #idEaseIn{
+            transition-timing-function: ease-in; background-color: red;
+        }
+        #idEaseOut{
+            transition-timing-function: ease-out; background-color: aqua;
+        }
+        #idEaseInOut{
+            transition-timing-function: ease-in-out; background-color: darkblue;
+        }
+    </style>
+        <script>
+            function mOk(){
+                lbtn = document.querySelector("button");
+                if(lbtn.textContent == "시작")
+                    lbtn.textContent = "초기화";
+                else
+                    lbtn.textContent = "시작";
+            }
+        </script>
+</head>
+<body>
+    <button onclick="mOk();"> 시작 </button>
+    <div id="idLiner"> linear </div>
+    <div id="idEase"> ease </div>
+    <div id="idEaseIn"> ease-In </div>
+    <div id="idEaseOut"> ease-out </div>    
+    <div id="idEaseInOut"> ease-in-out </div>
+</body>
+</html>
