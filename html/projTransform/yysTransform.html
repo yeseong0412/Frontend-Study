@@ -16,6 +16,7 @@
             width: 50px;
             height: 50px;
             background-color: hsla(120,100%,70%);
+            transition: 4s;
         }
     </style>
     <script>
@@ -27,9 +28,28 @@
             else if(pGbn=="rotate"){
                 lObj.style.transform = `rotate(130deg)`;
             }
+            else if(pGbn=="skewX"){
+                lObj.style.transform = `skewX(45deg)`;
+            }
+            else if(pGbn=="skewY"){
+                lObj.style.transform = `skewY(45deg)`;
+            }
+            else if(pGbn=="scale"){
+                lObj.style.transform = `scale(2,4)`;
+            }
+            else if(pGbn=="rotateX"){
+                lObj.style.transform = `rotateX(150deg)`;
+            }
+            else if(pGbn=="rotateY"){
+                lObj.style.transform = `rotateY(150deg)`;
+            }
+            else if(pGbn=="rotateZ"){
+                lObj.style.transform = `rotateZ(150deg)`;
+            }
             else if(pGbn=="init"){
                 lObj.style.transform = `translate(0,0)`;
             }
+
         }
     </script>
 </head>
@@ -37,6 +57,12 @@
     <button onclick="mOk('trans')"> translate </button>
     <button onclick="mOk('rotate')"> rotate </button>
     <button onclick="mOk('init')"> init </button>
+    <button onclick="mOk('skewX')"> skewX </button>
+    <button onclick="mOk('skewX')"> skewY </button>
+    <button onclick="mOk('scale')"> scale </button>
+    <button onclick="mOk('rotateX')"> rotateX </button>
+    <button onclick="mOk('rotateY')"> rotateY </button>
+    <button onclick="mOk('rotateZ')"> rotateZ </button>
     <div id="idPrnt">
         <div id="idChld">
 
