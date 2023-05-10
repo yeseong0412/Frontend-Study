@@ -9,17 +9,54 @@
         #idPrnt{
             width: 80vw;
             height: 150vh;
-            background-color: hsla(240, 100%, 60%);
+            background-color: hsla(240, 100%, 60% , 1);
+            position:relative;
+            padding: 50px;
         }
         #idChld{
-            width: 50px;
+            width: 80px;
             height: 80px;
-            background-color: aqua;
+            background-color: hsla(0, 100%, 50% , 1);
+        }
+        @keyframes ani1 {
+            from{background-color: hsla(0, 100%, 50% , 1); left: 30px; top:30px;}
+            to{background-color: hsla(240, 100%, 60% , 1); left: 200px; top:200px;}
         }
     </style>
+    <script>
+        function mOk(pGbn){
+            lChild = document.getElementById('idChld');
+            if(pGbn=="color"){
+                lChild.style.animation = "ani1 4s forwards";
+            }
+            else if(pGbn=="abs"){
+                lChild.style.position = "absolute";
+                lChild.style.animation = "ani1 4s forwards";
+            }
+            else if(pGbn=="rel"){
+                lChild.style.position = "relative";
+                lChild.style.animation = "ani1 4s forwards";
+            }
+            else if(pGbn=="fix"){
+                lChild.style.position = "fixed";
+                lChild.style.animation = "ani1 4s forwards";
+            }
+            else if(pGbn=="stat"){
+                lChild.style.position = "static";
+                lChild.style.animation = "ani1 4s forwards";
+            }
+            else{
+                lChild.style.animation = "none";
+            }
+        }
+    </script>
 </head>
 <body>
-    <button id="idBtn" onclick="mOk()"> start </button>
+    <button onclick="mOk('color')"> color </button>
+    <button onclick="mOk('abs')"> absolute </button>
+    <button onclick="mOk('rel')"> relative </button>
+    <button onclick="mOk('fix')"> fixed </button>
+    <button onclick="mOk('stat')"> static </button>
     <div id="idPrnt"> 
         <div id="idChld">
 
