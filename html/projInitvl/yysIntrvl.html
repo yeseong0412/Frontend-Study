@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idP{
+            background-color: yellow;
+            width: 80vw;
+            height: 80vh;
+        }
+        #idC{
+            background-color: hsla(0, 100%, 50% , 1);
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script>
+        function mOk(pGbn){
+            lB = document.getElementById("idB");
+            if(lB.textContent=="start"){
+                lB.textContent="stop";
+            }
+            else{
+                lB.textContent="start";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="idB" onclick="mOk()"> start </button>
+    <div id="idP">
+        <div id="idC">
+
+        </div>
+    </div>
+</body>
+</html>
