@@ -1,38 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script>
+        var idIntrvl=0;
+
+        function mOk(pGbn){
+            lBtn = document.getElementById("idBtn");
+            if(lBtn.textContent=="start")
+            {
+                lBtn.textContent="stop";
+                idIntrvl = setInterval(mIntrvl,1000);
+                lChld = document.getElementById('idChld');
+                lChld.style.left="0%";
+                lChld.style.top="0%";
+                function mIntrvl(){
+                    let lLeft=Number(lChld.style.left.substring(0,lChld.style.left.length-1));
+                    let lTop=Number(lChld.style.top.substring(0,lChld.style.top.length-1));
+                    lLeft+=2;
+                    lTop+=2;
+                    lChld.style.left=lLeft + "%";
+                    lChld.style.top=lTop + "%";
+                }
+            }
+            else
+            {
+                lBtn.textContent="start";
+            }
+        }
+           
+    </script>
     <style>
-        #idP{
-            background-color: yellow;
+        #idPrnt {
             width: 80vw;
             height: 80vh;
+            background-color: hsla(60,100%,50%,1);
+            position: relative;
         }
-        #idC{
-            background-color: hsla(0, 100%, 50% , 1);
+        #idChld {
             width: 50px;
             height: 50px;
+            background-color: hsla(0,100%,50%,1);
+            position: absolute;
         }
     </style>
-    <script>
-        function mOk(pGbn){
-            lB = document.getElementById("idB");
-            if(lB.textContent=="start"){
-                lB.textContent="stop";
-            }
-            else{
-                lB.textContent="start";
-            }
-        }
-    </script>
 </head>
 <body>
-    <button id="idB" onclick="mOk()"> start </button>
-    <div id="idP">
-        <div id="idC">
+    <button id="idBtn" onclick="mOk()"> start </button>
+    <div id="idPrnt">
+        <div id="idChld">
 
         </div>
     </div>
