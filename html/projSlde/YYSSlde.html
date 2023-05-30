@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idPrnt{
+            width: 100vw;
+            height: 70vh;
+            background-color: hsla(84, 100%, 59%, 1);
+        }
+        #idPageSlct{
+            width: 100vw;
+            height: 5vh;
+            text-align: center;
+            /* background-color: hsla(60, 100%, 50% , 1); */
+            margin: 0.8vh 0vh;
+        }
+        .clsDot{
+            display: inline-block;
+            width: 5vw;
+            height: 5vw;
+            background-color: hsla(0, 2%, 60%, 1);
+            border-radius: 50%;
+            margin: 0vw 0.8vw;
+            cursor: pointer;
+        }
+
+
+    </style>
+    <script>
+        function mCurrent(pPage){
+            alert(pPage);
+        }
+    </script>
+</head>
+<body>
+    <div id="idPrnt">
+
+    </div>
+    <div id="idPageSlct">
+        <span class="clsDot" onclick="mCurrent('1')">  </span>
+        <span class="clsDot" onclick="mCurrent('2')">  </span>
+        <span class="clsDot" onclick="mCurrent('3')">  </span>
+    </div>
+</body>
+</html>
