@@ -27,18 +27,72 @@
             margin: 0vw 0.8vw;
             cursor: pointer;
         }
+        .clsSlde{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .clsSlde img{
+            width: 100%;
+            height: 100%;
+        }
+        .clsTxtPage{
+            position: absolute;
+            top: 0.8vh;
+            left: 0.8vh;
+            font-size: 2vh;
+            color:hsla(0,1%,80%,1);
+        }
+        .clsCptn{
+            position: absolute;
+            font-size: 2vh;
+            color: hsla(0,1%,80%,1);
+            width: 100%;
+            text-align: center;
+            bottom: 0.8vh;
+        }
 
 
     </style>
     <script>
+        var gSldNum;
         function mCurrent(pPage){
-            alert(pPage);
+            //alert(pPage);
+            let arrslides = document.querySelectorAll(".clsSlde") //수행때 나옴 
+            for(let i=0; i<arrslides.length; i++){
+                arrslides[i].style.display="none";
+            }
+            arrslides[pPage-1].style.display="block";
+        }
+        window.onload=function(){ // 수행 혹 나올수도 
+            gSldNum = 1;
+            mCurrent(gSldNum);
         }
     </script>
 </head>
 <body>
     <div id="idPrnt">
-
+        <div class="clsSlde">
+            <div class="clsTxtPage">
+                1/3
+            </div>
+            <img src="http://arabbit.link/images/aurora.jpg">
+            <div class="clsCptn"> aurora </div>
+        </div>
+        <div class="clsSlde">
+            <div class="clsTxtPage">
+                2/3
+            </div>
+            <img src="http://arabbit.link/images/canyon.jpg">
+            <div class="clsCptn"> canyon </div>
+        </div>
+        <div class="clsSlde">
+            <div class="clsTxtPage">
+                3/3
+            </div>
+            <img src="http://arabbit.link/images/mountain.jpg">
+            <div class="clsCptn"> mountain </div>
+        </div>
     </div>
     <div id="idPageSlct">
         <span class="clsDot" onclick="mCurrent('1')">  </span>
