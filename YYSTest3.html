@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1211양예성</title>
+    <style>
+        #idPrnt{
+            width: 98vw;
+            height: 70vh;
+            position: relative;
+            margin: 1vw auto;
+        }
+        .clsSlde{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .clsSlde img{
+            width: 100%;
+            height: 100%;
+        }
+        .clsCptn{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 2px;
+            color: #eee;
+            font-size: 3%;
+
+        }
+        #idDivPgSlct{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function mCurrent(pSldeNum){
+            let arrSldes=document.querySelectorAll('.clsSlde');
+            for(let i=0; i<arrSldes.length; i++){
+                arrSldes[i].style.display="none";
+            }
+            arrSldes(pSldeNum-1).style.display="block";
+        window.onload=function(){
+            mCurrent(2);
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="idPrnt">
+        <div class="clsSlde">
+            <img src="http://arabbit.link/images/aurora.jpg">
+            <div class="clsSlde">
+                aurora
+            </div>
+        </div>
+        <!-- <div class="clsSlde">
+            <img src="http://arabbit.link/images/canyon.jpg">
+            <div class="clsSlde">
+                canyon
+            </div>
+        </div> -->
+        <br>
+    </div>
+    <div id="idDivPgSlct">
+        <span class="clsDot" onclick="mCurrent('1')"></span>
+        <span class="clsDot" onclick="mCurrent('2')"></span>
+    </div>
+</body>
+</html>
