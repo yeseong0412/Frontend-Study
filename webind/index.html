@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    </script>
+
+    <style>
+        #dayInfo{
+            display: block;
+            text-align: center;
+        }
+        button{
+            width: auto;
+            height: auto;
+        }
+        div{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+    <script src="./functions.js"></script>
+
+</head>
+<body>
+    
+    <div id="dayInfo">
+        <p id="day"></p>
+        <script>
+            day();
+        </script>
+    </div>
+
+    <div>
+        <p id="jobs"></p>
+        <script>
+            doJob(cnt);
+        </script>
+    </div>
+
+
+    <div>
+        <input id="doJob" type="text" placeholder="할 일 추가">
+        <button onclick="addJob()">할 일 추가</button>
+        <script>
+            addJob();
+        </script>
+
+        <button onclick="removeJob()">할 일 삭제</button>
+        <script>
+            removeJob();
+        </script>
+    </div>
+
+    <p id="jobList"> 할 일 목록</p>
+    
+</body>
+</html>
+
